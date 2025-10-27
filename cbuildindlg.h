@@ -4,6 +4,10 @@
 #include <QDialog>
 #include <QPushButton>
 #include <QTextEdit>
+#include <QtPrintSupport/qprinter.h>
+#include <QtPrintSupport/qpagesetupdialog.h>
+#include <QtPrintSupport/QPrintDialog>
+#include <QtPrintSupport/QPrintPreviewDialog>
 
 class CBuildinDlg : public QDialog
 {
@@ -22,5 +26,10 @@ private:
     QPushButton *pagePushBtn;
     QPushButton *progressPushBtn;
     QPushButton *printPushBtn;
+    QPushButton *textPushBtn;
+
+private slots:
+    void doPushBtn();
+    void doTextcolor();
 };
 #endif // CBUILDINDLG_H
