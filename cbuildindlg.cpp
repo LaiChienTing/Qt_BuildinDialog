@@ -129,20 +129,20 @@ void CBuildinDlg::doPushBtn()
         QPrinter printer(QPrinter::HighResolution);
         QPageSetupDialog* dlg = new QPageSetupDialog(&printer, this);
         dlg->setWindowTitle(QStringLiteral("頁面設定對話方塊"));
-        /*if (dlg->exec() == QDialog::Accepted)
+        if (dlg->exec() == QDialog::Accepted)
         {
 
-        }*/
+        }
     }
 
     if (btn == progressPushBtn)
     {
         QProgressDialog progress(QStringLiteral("正在複製檔案..."),
                                  QStringLiteral("取消"),
-                                 0, 100, this);
+                                 0, 10000, this);
         progress.setWindowTitle(QStringLiteral("進度對話方塊"));
         progress.show();
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < 10000; i++)
         {
             progress.setValue(i);
             qApp->processEvents();
